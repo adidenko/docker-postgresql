@@ -1,0 +1,24 @@
+docker-rsyslog
+===================
+
+Fuel docker-rsyslog container
+
+
+```bash
+cp /etc/astute.yaml ./
+
+# build
+docker build -t fuel/postgresql ./
+
+# run AFTER storage-puppet and storage-log
+
+docker run \
+  -h $(hostname -f) \
+  -p 5432:5432 \
+  -d -t \
+  --volumes-from storage-puppet \
+  --volumes-from storage-log \
+  --name fuel-postgresql \
+  fuel/postgresql
+
+```
