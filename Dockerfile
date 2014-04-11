@@ -18,6 +18,8 @@ RUN touch /etc/sysconfig/network
 RUN touch /var/lib/hiera/common.yaml
 RUN chmod +x /usr/local/bin/start.sh
 
+RUN /usr/bin/puppet apply -d -v /root/site.pp
+
 EXPOSE 5432
 
 CMD ["/usr/local/bin/start.sh"]
