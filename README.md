@@ -1,7 +1,7 @@
 docker-rsyslog
 ===================
 
-Fuel docker-rsyslog container
+Fuel docker-postgres container
 
 
 ```bash
